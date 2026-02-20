@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Overlay</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="overlayRoot">
+
+    <div class="grid">
+
+      <div class="tile" data-tile="1">
+        <div class="video">
+          <iframe id="vdo-1" allow="autoplay; camera; microphone" referrerpolicy="no-referrer"></iframe>
+          <img id="out-1" class="outImg" alt="Ausgeschieden" />
+          <div id="ph-1" class="placeholder">VDO Link fehlt</div>
+        </div>
+        <div class="nameTop" id="name-1">Spieler 1</div>
+        <div class="voteTag" id="voteTag-1"></div>
+      </div>
+
+      <div class="tile" data-tile="2">
+        <div class="video">
+          <iframe id="vdo-2" allow="autoplay; camera; microphone" referrerpolicy="no-referrer"></iframe>
+          <img id="out-2" class="outImg" alt="Ausgeschieden" />
+          <div id="ph-2" class="placeholder">VDO Link fehlt</div>
+        </div>
+        <div class="nameTop" id="name-2">Spieler 2</div>
+        <div class="voteTag" id="voteTag-2"></div>
+      </div>
+
+      <div class="tile" data-tile="3">
+        <div class="video">
+          <iframe id="vdo-3" allow="autoplay; camera; microphone" referrerpolicy="no-referrer"></iframe>
+          <img id="out-3" class="outImg" alt="Ausgeschieden" />
+          <div id="ph-3" class="placeholder">VDO Link fehlt</div>
+        </div>
+        <div class="nameTop" id="name-3">Spieler 3</div>
+        <div class="voteTag" id="voteTag-3"></div>
+      </div>
+
+      <div class="tile" data-tile="8">
+        <div class="video">
+          <iframe id="vdo-8" allow="autoplay; camera; microphone" referrerpolicy="no-referrer"></iframe>
+          <img id="out-8" class="outImg" alt="Ausgeschieden" />
+          <div id="ph-8" class="placeholder">VDO Link fehlt</div>
+        </div>
+        <div class="nameTop" id="name-8">Spieler 8</div>
+        <div class="voteTag" id="voteTag-8"></div>
+      </div>
+
+      <div class="tile mod" data-tile="0">
+        <div class="video">
+          <iframe id="vdo-0" allow="autoplay; camera; microphone" referrerpolicy="no-referrer"></iframe>
+          <div id="ph-0" class="placeholder">VDO Link fehlt</div>
+        </div>
+        <div class="nameTop" id="name-0">Moderator</div>
+        <div class="modTimer" id="timer">5:00</div>
+      </div>
+
+      <div class="tile" data-tile="4">
+        <div class="video">
+          <iframe id="vdo-4" allow="autoplay; camera; microphone" referrerpolicy="no-referrer"></iframe>
+          <img id="out-4" class="outImg" alt="Ausgeschieden" />
+          <div id="ph-4" class="placeholder">VDO Link fehlt</div>
+        </div>
+        <div class="nameTop" id="name-4">Spieler 4</div>
+        <div class="voteTag" id="voteTag-4"></div>
+      </div>
+
+      <div class="tile" data-tile="7">
+        <div class="video">
+          <iframe id="vdo-7" allow="autoplay; camera; microphone" referrerpolicy="no-referrer"></iframe>
+          <img id="out-7" class="outImg" alt="Ausgeschieden" />
+          <div id="ph-7" class="placeholder">VDO Link fehlt</div>
+        </div>
+        <div class="nameTop" id="name-7">Spieler 7</div>
+        <div class="voteTag" id="voteTag-7"></div>
+      </div>
+
+      <div class="tile" data-tile="6">
+        <div class="video">
+          <iframe id="vdo-6" allow="autoplay; camera; microphone" referrerpolicy="no-referrer"></iframe>
+          <img id="out-6" class="outImg" alt="Ausgeschieden" />
+          <div id="ph-6" class="placeholder">VDO Link fehlt</div>
+        </div>
+        <div class="nameTop" id="name-6">Spieler 6</div>
+        <div class="voteTag" id="voteTag-6"></div>
+      </div>
+
+      <div class="tile" data-tile="5">
+        <div class="video">
+          <iframe id="vdo-5" allow="autoplay; camera; microphone" referrerpolicy="no-referrer"></iframe>
+          <img id="out-5" class="outImg" alt="Ausgeschieden" />
+          <div id="ph-5" class="placeholder">VDO Link fehlt</div>
+        </div>
+        <div class="nameTop" id="name-5">Spieler 5</div>
+        <div class="voteTag" id="voteTag-5"></div>
+      </div>
+
+    </div>
+
+    <div class="hud">
+      <div class="turn" id="turn">Dran: Spieler 1</div>
+    </div>
+
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="overlay.js"></script>
+</body>
+</html>

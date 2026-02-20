@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Voting</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="playerBody">
+
+  <div class="playerWrap">
+    <h1>Voting</h1>
+
+    <div class="playerCard">
+      <div class="playerInfo" id="playerHeader">Verbinde…</div>
+
+      <div class="playerRow" style="margin-top:12px;">
+        <label>Raus wählen</label>
+        <select id="targetSelect"></select>
+      </div>
+
+      <button id="btnVote" class="playerBtn" style="margin-top:14px;">Vote abschicken</button>
+
+      <div id="playerInfo" class="playerInfo" style="margin-top:12px;">…</div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="player.js"></script>
+</body>
+</html>

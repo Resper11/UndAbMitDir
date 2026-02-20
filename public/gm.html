@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Gamemaster</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="gmBody">
+
+  <div class="gmWrap">
+    <h1>Gamemaster</h1>
+
+    <div class="gmGrid">
+
+      <!-- LEFT -->
+      <div class="gmCol">
+
+        <div class="gmCard">
+          <h2>Wer ist dran?</h2>
+          <p>Klicke einen Spieler (ausgeschiedene sind deaktiviert).</p>
+
+          <div class="gmButtons" id="turnButtons">
+            <button class="gmBtn" data-turn="1">Spieler 1</button>
+            <button class="gmBtn" data-turn="2">Spieler 2</button>
+            <button class="gmBtn" data-turn="3">Spieler 3</button>
+            <button class="gmBtn" data-turn="4">Spieler 4</button>
+            <button class="gmBtn" data-turn="5">Spieler 5</button>
+            <button class="gmBtn" data-turn="6">Spieler 6</button>
+            <button class="gmBtn" data-turn="7">Spieler 7</button>
+            <button class="gmBtn" data-turn="8">Spieler 8</button>
+          </div>
+
+          <div class="gmStatus">
+            Aktuell dran: <strong id="gmTurnText">Spieler 1</strong>
+          </div>
+
+          <div class="gmHintSmall">
+            Sobald du <strong>Richtig</strong> oder <strong>Falsch</strong> drückst, springt es automatisch zum nächsten aktiven Spieler.
+          </div>
+        </div>
+
+        <div class="gmCard" style="margin-top:14px;">
+          <h2>Antwort bewerten</h2>
+
+          <div class="gmAnswerRow">
+            <button id="btnRight" class="gmBig">Richtig ✅</button>
+            <button id="btnWrong" class="gmBig">Falsch ❌</button>
+          </div>
+
+          <div class="gmHint" id="gmLastAction">Bereit.</div>
+        </div>
+
+        <div class="gmCard" style="margin-top:14px;">
+          <h2>Timer</h2>
+
+          <div class="gmTimerRow">
+            <div class="gmTimerBig" id="gmTimerText">5:00</div>
+            <div class="gmTimerSmall">Status: <strong id="gmTimerStatus">pausiert</strong></div>
+          </div>
+
+          <h3>Presets</h3>
+          <div class="gmPresetRow">
+            <button class="gmPreset" data-ms="300000">5:00</button>
+            <button class="gmPreset" data-ms="270000">4:30</button>
+            <button class="gmPreset" data-ms="240000">4:00</button>
+            <button class="gmPreset" data-ms="210000">3:30</button>
+            <button class="gmPreset" data-ms="180000">3:00</button>
+            <button class="gmPreset" data-ms="170000">2:50</button>
+          </div>
+
+          <h3>Steuerung</h3>
+          <div class="gmControlRow">
+            <button id="btnStart" class="gmCtl">Start</button>
+            <button id="btnPause" class="gmCtl">Pause</button>
+            <button id="btnReset" class="gmCtl">Reset (5:00)</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="gmCol">
+
+        <div class="gmCard">
+          <h2>Namen (inkl. Moderator)</h2>
+          <div class="gmNameGrid" id="nameGrid"></div>
+        </div>
+
+        <div class="gmCard" style="margin-top:14px;">
+          <h2>VDO.Ninja Links</h2>
+          <p class="gmHintSmall">Trage pro Slot die komplette URL ein (z.B. <strong>https://vdo.ninja/?view=...</strong>).</p>
+          <div class="gmLinkGrid" id="vdoGrid"></div>
+        </div>
+
+        <div class="gmCard" style="margin-top:14px;">
+          <div class="gmStatsHeader">
+            <h2>Stats, Status, Standbild</h2>
+            <div class="gmStatsHeaderBtns">
+              <button id="btnResetEliminated" class="gmCtl gmDanger">Alle aktiv</button>
+              <button id="btnResetStats" class="gmCtl gmDanger">Stats Reset</button>
+            </div>
+          </div>
+
+          <div class="gmTableWrap">
+            <table class="gmTable">
+              <thead>
+                <tr>
+                  <th>Spieler</th>
+                  <th>Richtig</th>
+                  <th>Falsch</th>
+                  <th>Gesamt</th>
+                  <th>Status</th>
+                  <th>Standbild</th>
+                </tr>
+              </thead>
+              <tbody id="statsBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="gmCard" style="margin-top:14px;">
+          <h2>Voting</h2>
+
+          <div class="gmVoteRow">
+            <button id="btnStartVote" class="gmCtl">Voting starten</button>
+            <button id="btnEndVote" class="gmCtl">Voting beenden</button>
+            <button id="btnClearVotes" class="gmCtl">Votes reset</button>
+          </div>
+
+          <div class="gmGoldRow">
+            <div class="gmGoldTitle">Gold-Spieler (geschützt)</div>
+            <div id="goldButtons" class="gmGoldButtons"></div>
+            <button id="btnClearGold" class="gmCtl gmDanger" style="margin-top:10px;">Gold entfernen</button>
+          </div>
+
+          <div class="gmVoteInfo" id="voteInfo">Voting: aus</div>
+          <div class="gmVoteCounts" id="voteCounts"></div>
+        </div>
+
+        <div class="gmCard" style="margin-top:14px;">
+          <h2>Vote-Aufdeckung (manuell)</h2>
+
+          <p class="gmHintSmall">
+            Du siehst hier geheim, wer wen gewählt hat. Mit „Reveal“ zeigst du genau diesen Vote im Overlay.<br>
+            Du kannst beliebig Reihenfolge wählen oder wieder verstecken.
+          </p>
+
+          <div class="gmRevealTopRow">
+            <button id="btnRefreshSecret" class="gmCtl">Aktualisieren</button>
+            <button id="btnClearReveals" class="gmCtl gmDanger">Alle Reveals löschen</button>
+          </div>
+
+          <div id="secretVotesBox" class="gmSecretBox">Lade…</div>
+        </div>
+
+        <div class="gmCard" style="margin-top:14px;">
+          <h2>Spieler-Links</h2>
+          <p class="gmHintSmall">Jeder Link darf nur 1 Stimme abgeben pro Voting-Runde.</p>
+          <div id="playerLinks" class="gmLinksBox"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="gm.js"></script>
+</body>
+</html>
