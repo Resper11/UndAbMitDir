@@ -162,6 +162,7 @@ body{
   text-shadow: 0 2px 12px rgba(0,0,0,.55);
   backdrop-filter: blur(6px);
   pointer-events: none;
+  z-index:20;
 }
 
 /* ✅ Vote label bottom-right inside each player tile */
